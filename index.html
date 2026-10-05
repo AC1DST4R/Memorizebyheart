@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b0d12">
+<link rel="manifest" href="manifest.json">
+<title>Memorize — Free</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <aside class="sidebar">
+    <div class="brand"><span class="logo">M</span><span>Memorize</span><small>FREE</small></div>
+    <button class="new primary" onclick="openEditor()">＋ New text</button>
+    <nav>
+      <button data-view="home" class="nav active" onclick="showView('home')">⌂ <span>Home</span></button>
+      <button data-view="texts" class="nav" onclick="showView('texts')">▤ <span>My texts</span></button>
+      <button data-view="practice" class="nav" onclick="showView('practice')">◉ <span>Practice</span></button>
+      <button data-view="stats" class="nav" onclick="showView('stats')">▥ <span>Statistics</span></button>
+      <button data-view="groups" class="nav" onclick="showView('groups')">♧ <span>Groups</span></button>
+      <button data-view="settings" class="nav" onclick="showView('settings')">⚙ <span>Settings</span></button>
+    </nav>
+    <div class="sidebottom">
+      <button class="nav" onclick="exportData()">⇩ <span>Export backup</span></button>
+      <label class="nav filebtn">⇧ <span>Import backup</span><input type="file" accept=".json" onchange="importData(event)"></label>
+    </div>
+  </aside>
+
+  <main>
+    <header class="topbar">
+      <div class="mobilebrand">M Memorize</div>
+      <div class="search"><span>⌕</span><input id="globalSearch" placeholder="Search your texts…" oninput="render()"></div>
+      <button class="iconbtn" title="Dark mode" onclick="toggleTheme()">◐</button>
+      <button class="avatar">S</button>
+    </header>
+    <section id="content"></section>
+  </main>
+</div>
+
+<div id="modal" class="modal hidden"></div>
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
