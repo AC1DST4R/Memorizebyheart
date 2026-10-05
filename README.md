@@ -29,18 +29,6 @@ A standalone, no-premium memorization web app inspired by modern scripture/speec
 - PWA manifest/service worker
 - No premium tier or paywall
 
-## Run
-
-Open `index.html` in a browser, or serve the folder with any static web server.
-
-For the service worker/PWA, use a local server such as:
-
-```bash
-python -m http.server 8080
-```
-
-Then open `http://localhost:8080`.
-
 ## Notes
 
 The app is an independent implementation. It does not include proprietary source code, branding, or assets from Memorize By Heart.
